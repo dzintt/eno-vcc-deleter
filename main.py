@@ -69,9 +69,10 @@ class DeleteVCC:
     #worker function that handles vcc deletion
     async def delete(self, queue, taskName):
         while True:
-            try:
+            isEmpty = queue.empty()
+            if not isEmpty:
                 #get queue data
-                data = await queue.get(timeout=1)
+                data = await queue.get()
                 print(f"[{taskName}] Starting Delete")
                 cardRef, vccToken = data.split(":")
 
@@ -94,8 +95,7 @@ class DeleteVCC:
                 #clean up
                 await taskPage.close()
                 print(f"[{taskName}] Card Deleted")
-                
-            except queue.Empty:
+            else:
                 break
 
         print(f"[{taskName}] Task Finished")
@@ -127,7 +127,8 @@ async def interceptResp(resp):
         #parse the data and store it in a dict called cardData
         cardRefId = resp.url.split("cardReferenceId=")[1]
         data = await resp.json()
-        cardData[cardRefId] = data
+        if data["entries"]:
+            cardData[cardRefId] = data
 
 #function to get settings and store in variables
 def getSettings():
