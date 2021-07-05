@@ -1,7 +1,4 @@
 import json, ctypes, asyncio, logging, sys
-from datetime import datetime
-from simple_chalk import chalk
-from colorama import init, Fore, Back, Style
 from pyppeteer import launch
 
 #stfu
