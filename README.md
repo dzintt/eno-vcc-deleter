@@ -1,5 +1,5 @@
 # Capital One Eno VCC Deleter
-Script to automate the deletion of VCC's created by Eno.
+Script to automate the deletion of Capital One Eno VCC's
 
 # General Setup
 1. Fill out settings.json
