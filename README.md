@@ -1,3 +1,5 @@
+CURRENTLY NOT WORKING
+
 # Capital One Eno VCC Deleter
 Script to automate the deletion of Capital One Eno VCC's
 
