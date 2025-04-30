@@ -1,3 +1,4 @@
+USE THIS ONE INSTEAD https://github.com/dzintt/cap1-vcc-deleter
 
 # Capital One Eno VCC Deleter
 Script to automate the deletion of Capital One Eno VCC's
